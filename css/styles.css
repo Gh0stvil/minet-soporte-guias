@@ -55,3 +55,54 @@ h1 {
 .card:hover {
   background-color: #eef3ff;
 }
+/*
+###############################################
+#                                             #
+#       Estilos de las guias en html          #
+#                                             #
+###############################################
+*/
+.guia {
+  text-align: left;
+}
+
+.alert {
+  background-color: #fff3cd;
+  color: #856404;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+  font-size: 14px;
+}
+
+.step {
+  margin-bottom: 30px;
+}
+
+.step h2 {
+  color: #0a2a66;
+  margin-bottom: 8px;
+}
+
+.step-img {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.ip {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.ip a {
+  color: #0a2a66;
+  text-decoration: none;
+}
+
+.footer-note {
+  margin-top: 40px;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}
