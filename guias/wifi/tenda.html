@@ -9,16 +9,13 @@
 <body>
 
     <header class="header">
-        <button id="btnSidebar" class="btn-sidebar" ><img src="../../assets/img-guias/libros.png" alt="side_bar" weight="30" height="30"  ></button>
-        <img src="../../assets/img-guias/Minet.png" alt="MINET Logo" class="logo" onclick="location.href='../../index.html'">
-        <a href="https://wa.me/584125400172?text=Hola%20soporte%20MINET,%20necesito%20ayuda" target="_blank" class="btn-soporte">
-            <button type="button">
-                <img src="../../assets/img-guias/soporte.png"alt="contacto" width="30" height="30">
-            </button>
+        <img src="../../assets/img-guias/Minet.png" alt="MINET Logo" class="logo" onclick="location.href='index.html'">
+        
+        <a href="https://wa.me/584125400172?text=Hola%20soporte%20MINET,%20necesito%20ayuda">
+          <i class="fa-solid fa-headset" id="support"></i>
         </a>
 
-  
-    </header>
+</header>
 
     <main class="container guia">
 
@@ -172,22 +169,7 @@
 
 </body>
 
-<aside id="sidebar" class="sidebar">
-  <div class="sidebar-header">
-    <h3 class="ga">Guías</h3>
-  </div>
-
-  <nav class="sidebar-content">
-    <a href="../fibra/Tenda-cambiar-wifi.html">Mercusys</a>
-    <a href="../fibra/tplink.html">TP-Link</a>
-    <a href="../fibra/tenda.html">Tenda</a>
-    <a href="../fibra/antena.html">Antena</a>
-  </nav>
-</aside>
-
 <div id="overlay"></div>
-
-
 
 <style>
 :root {
@@ -227,6 +209,12 @@ body {
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
     display: flex;
     justify-content: space-between;
+}
+
+.support {
+  font-size: 50px;
+  color: #ffffff;
+  cursor: pointer;
 }
 
 .logo {

@@ -3,57 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MINET | Login</title>
+  <title>MINET | Soporte</title>
 
-  <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
+  <!-- Iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
-  <div class="layout">
+<div class="layout">
 
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-      <nav class="sidebar-icons">
+  <!-- SIDEBAR PRINCIPAL -->
+  <aside class="sidebar">
+    <nav class="sidebar-icons">
 
-        <div class="nav-item active" data-page ="home">
-          <i class="fa-solid fa-house"></i>
-          <span>Inicio</span>
-        </div>
-
-        <div class="nav-item" data-page="Antena">
-          <i class="fa-solid fa-satellite-dish"></i>
-          <span>Antena</span>
-        </div>
-
-        <div class="nav-item" data-page="Fibra">
-          <i class="fa-solid fa-tower-broadcast"></i>
-          <span>Fibra</span>
-        </div>
-
-        <div class="nav-item" data-page="Router">
-          <i class="fa-solid fa-wifi"></i>
-          <span>Router</span>
-        </div>
-
-      </nav>
-    </aside>
-
-    <!-- CONTENIDO -->
-    <main class="content-wrapper">
-      <div class="content" id="content">
-        <h1>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-          voluptatem, odio reiciendis fugiat, aspernatur rem tempora nisi.
-        </h1>
+      <div class="nav-item active" data-section="home">
+        <i class="fa-solid fa-house"></i>
+        <span>Inicio</span>
       </div>
-    </main>
 
-  </div>
+      <div class="nav-item" data-section="asistente">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+        <span>Asistente</span>
+      </div>
+
+      <div class="nav-item" data-section="router">
+        <i class="fa-solid fa-wifi"></i>
+        <span>Router</span>
+      </div>
+
+    </nav>
+  </aside>
+
+  <!-- CONTENIDO -->
+  <main class="content-wrapper">
+    <div class="content" id="content"></div>
+  </main>
+
+</div>
 
 <script>
 
@@ -71,57 +58,193 @@
     });
   });
 
-  /* #########################
-     # Carga de contenido   #
-     #########################
-  */
-  const content = document.getElementById("content");
+/* =====================================================
+   ESTADO DEL USUARIO (flujo de decisiones)
+===================================================== */
+const userFlow = {
+  instalacion: null,
+  energia: null,
+  accion: null,
+  router: null
+};
 
-  const pages = {
-    home: `
-      <h1>Bienvenido a MINET</h1>
-      <p>Selecciona una opción del menú para continuar.</p>
-    `,
+/* =====================================================
+   FUNCIÓN BASE PARA RENDERIZAR CONTENIDO
+===================================================== */
+function render(html) {
+  document.getElementById("content").innerHTML = html;
+}
 
-    Antena: `
-      <h1>Soporte Antena</h1>
-      <p>Aquí encontrarás las guías relacionadas con antenas.</p>
-    `,
+/* =====================================================
+   HOME
+===================================================== */
+function loadHome() {
+  render(`
+    <h1>Bienvenido a MINET</h1>
+    <p>
+      Este asistente te ayudará a resolver problemas básicos de conexión
+      de forma rápida y guiada.
+    </p>
+    <p>Selecciona <strong>Asistente</strong> para comenzar.</p>
+  `);
+}
 
-    Fibra: `
-      <h1>Soporte Fibra</h1>
-      <p>Guías para clientes de fibra óptica.</p>
-    `,
+/* =====================================================
+   ASISTENTE - PASO 1
+===================================================== */
+function askInstalacion() {
+  resetFlow();
+  render(`
+    <h2>¿Qué tipo de instalación tienes?</h2>
 
-    Router: `
-      <h1>Configuración de Router</h1>
-      <p>Guías para cambiar WiFi, reiniciar, etc.</p>
-    `
-  };
+    <div class="options">
+      <button onclick="selectInstalacion('antena')">Antena</button>
+      <button onclick="selectInstalacion('fibra')">Fibra óptica</button>
+    </div>
+  `);
+}
 
-/* #########################
-   # Manejo de eventos    #
-   #########################
-*/
+function selectInstalacion(tipo) {
+  userFlow.instalacion = tipo;
+  askEnergy();
+}
 
-  const navItems = document.querySelectorAll(".nav-item");
+/* =====================================================
+   PASO 2 - MINI UPS
+===================================================== */
+function askEnergy() {
+  render(`
+    <h2>¿Tu instalación tiene Mini UPS?</h2>
 
-  navItems.forEach(item => {
-    item.addEventListener("click", () => {
+    <div class="options">
+      <button onclick="selectEnergy('con-ups')">Con Mini UPS</button>
+      <button onclick="selectEnergy('sin-ups')">Sin Mini UPS</button>
+    </div>
+  `);
+}
 
-      // icono activo
-      navItems.forEach(i => i.classList.remove("active"));
-      item.classList.add("active");
+function selectEnergy(tipo) {
+  userFlow.energia = tipo;
+  askAction();
+}
 
-      // cargar contenido
-      const page = item.dataset.page;
-      content.innerHTML = pages[page];
+/* =====================================================
+   PASO 3 - ACCIÓN
+===================================================== */
+function askAction() {
+  render(`
+    <h2>¿Qué deseas realizar?</h2>
+    <p class="note">
+      En la mayoría de los casos, un reinicio de equipos
+      soluciona los problemas de conexión.
+    </p>
 
-    });
+    <div class="options">
+      <button onclick="selectAction('reinicio')">Reinicio de equipos</button>
+      <button onclick="selectAction('wifi')">Cambiar WiFi</button>
+    </div>
+  `);
+}
+
+function selectAction(action) {
+  userFlow.accion = action;
+
+  if (action === "wifi") {
+    askRouter();
+  } else {
+    resolveGuide();
+  }
+}
+
+/* =====================================================
+   PASO 4 - ROUTER (solo WiFi)
+===================================================== */
+function askRouter() {
+  render(`
+    <h2>¿Qué marca de router tienes?</h2>
+
+    <div class="options">
+      <button onclick="selectRouter('mercusys')">Mercusys</button>
+      <button onclick="selectRouter('tplink')">TP-Link</button>
+      <button onclick="selectRouter('tenda')">Tenda</button>
+    </div>
+  `);
+}
+
+function selectRouter(router) {
+  userFlow.router = router;
+  resolveGuide();
+}
+
+/* =====================================================
+   RESOLUCIÓN FINAL
+===================================================== */
+function resolveGuide() {
+
+  // Reinicios (no dependen del router)
+  if (userFlow.accion === "reinicio") {
+    const path = `guias/reinicios/${userFlow.instalacion}-${userFlow.energia}.html`;
+    loadExternalGuide(path);
+    return;
+  }
+
+  // WiFi (sí depende del router)
+  if (userFlow.accion === "wifi") {
+    const path = `guias/wifi/${userFlow.router}.html`;
+    loadExternalGuide(path);
+  }
+}
+
+/* =====================================================
+   CARGA DE HTML EXTERNO
+===================================================== */
+function loadExternalGuide(path) {
+  fetch(path)
+    .then(res => res.text())
+    .then(html => render(html))
+    .catch(() => render("<p>Error cargando la guía.</p>"));
+}
+
+/* =====================================================
+   UTILIDADES
+===================================================== */
+function resetFlow() {
+  userFlow.instalacion = null;
+  userFlow.energia = null;
+  userFlow.accion = null;
+  userFlow.router = null;
+}
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+document.querySelectorAll(".nav-item").forEach(item => {
+  item.addEventListener("click", () => {
+
+    document.querySelectorAll(".nav-item").forEach(i =>
+      i.classList.remove("active")
+    );
+
+    item.classList.add("active");
+
+    const section = item.dataset.section;
+
+    if (section === "home") loadHome();
+    if (section === "asistente") askInstalacion();
   });
+});
+
+/* =====================================================
+   CARGA INICIAL
+===================================================== */
+loadHome(); 
 </script>
 
 </body>
+
+/*
+Estilos CSS
+*/
 
 <style>
 
