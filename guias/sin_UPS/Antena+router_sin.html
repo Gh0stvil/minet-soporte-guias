@@ -23,7 +23,7 @@
     <main class="container guia">
 
   <h1>Reinicio del servicio de Internet</h1>
-  <h2>Instalación con Antena + Router (SIN Mini UPS)</h2>
+  <h2>Antena + Router (Con Mini UPS)</h2>
 
   <p class="subtitle">
     Guía técnica de autosoporte – MINET C.A
@@ -31,120 +31,120 @@
 
   <section class="intro">
     <p>
-      Esta guía explica cómo reiniciar correctamente el servicio de internet en
-      instalaciones con <strong>antena y router sin Mini UPS</strong>, realizando
-      únicamente la <strong>desconexión física de la corriente</strong>.
+      Esta guía tiene como objetivo indicar al cliente cómo reiniciar correctamente
+      el servicio de internet en instalaciones con <strong>antena y Mini UPS</strong>,
+      realizando únicamente la desconexión física de la corriente,
+      sin afectar configuraciones, contraseñas ni el plan de servicio.
     </p>
 
     <p class="note">
-      Este procedimiento <strong>NO borra configuraciones</strong>, no cambia contraseñas
-      y <strong>NO debe presionarse ningún botón RESET</strong>.
+      ⚠ Este procedimiento <strong>NO borra configuraciones</strong> y
+      <strong>NO debe incluir presionar botones RESET</strong>.
     </p>
+
   </section>
 
   <section class="requirements">
     <h3>¿Cuándo aplicar este procedimiento?</h3>
     <ul>
       <li>No hay acceso a internet</li>
-      <li>El WiFi aparece conectado, pero no navega</li>
+      <li>El WiFi aparece conectado pero no navega</li>
       <li>El servicio se volvió inestable</li>
-      <li>El problema ocurrió luego de un corte eléctrico</li>
+      <li>Hubo un corte eléctrico y el Mini UPS se descargó</li>
     </ul>
   </section>
 
   <section class="step">
     <h3>Identificación de los equipos</h3>
     <p>
-      En una instalación con antena sin Mini UPS, se utilizan los siguientes equipos:
+      En una instalación con antena y Mini UPS, identifique los siguientes equipos:
     </p>
 
     <ul>
-      <li><strong>Router WiFi</strong></li>
-      <li><strong>PoE (Power over Ethernet)</strong></li>
-      <li><strong>Antena exterior</strong> (ubicada fuera de la vivienda)</li>
+      <li>Router WiFi</li>
+      <li>Mini UPS</li>
+      <li>PoE (Power over Ethernet)</li>
+      <li>Antena exterior (ubicada fuera de la vivienda)</li>
     </ul>
 
     <p class="note">
-      ⚠️ La antena exterior <strong>NO debe manipularse</strong>.
+      ⚠ La antena exterior <strong>NO debe manipularse</strong>.
     </p>
 
-    <!-- CAPTURA: Identificación de Router, PoE y Antena -->
-     <img src="../../assets/img-guias/imagenes para las guias/equipos.png" alt="Identificación de equipos" class="step-img">
+    <img src="../../assets/img-guias/imagenes para las guias/router-UPS.png" alt="router con mini ups" class="step-img">
+    <img src="../../assets/img-guias/imagenes para las guias/poe-antena.png" alt="router con mini ups" class="step-img">
+    
   </section>
 
   <section class="step">
-    <h3>Paso 1: Desconectar el router</h3>
-    <p>
-      Ubique el cable de alimentación del router WiFi y
-      <strong>desconéctelo completamente del tomacorriente</strong>.
-    </p>
-
-    <!-- CAPTURA: Router desconectado de la corriente -->
-        <img src="../../assets/img-guias/como desconectar router/desconectar-router.PNG" alt="Router desconectado" class="step-img"> 
-        <img src="../../assets/img-guias/como desconectar router/desconectar router2.PNG" alt="Router desconectado" class="step-img"> 
-    
-    </section>
-
-  <section class="step">
-    <h3>Paso 2: Desconectar el PoE</h3>
-    <p>
-      Ubique el equipo PoE y desconecte su cable de corriente.
-    </p>
+    <h3>Paso 1: Apagar el Mini UPS</h3>
+    <ul>
+      <li>Ubique el botón de encendido del Mini UPS</li>
+      <li>Apáguelo completamente</li>
+    </ul>
 
     <p class="note">
-      ⚠️ No desconecte el cable que va desde el PoE hacia la antena.
+      ⚠ No desconecte aún los cables de los equipos.
     </p>
 
-    <!-- CAPTURA: PoE desconectado de la corriente -->
-        <img src="../../assets/img-guias/imagenes para las guias/desconeccion de PoE 2.PNG" alt="PoE desconectado" class="step-img"> 
-        <img src="../../assets/img-guias/imagenes para las guias/desconeccion de PoE.PNG" alt="PoE desconectado" class="step-img">
+    <img src="../../assets/img-guias/imagenes para las guias/apagar_miniups.PNG" alt="router con mini ups" class="step-img">
+
+  </section>
+
+  <section class="step">
+    <h3>Paso 2: Desconectar el router de la corriente</h3>
+    <ul>
+      <li>Una vez apagado el Mini UPS, desconecte el cable de corriente del router</li>
+    </ul>
+
+        <img src="../../assets/img-guias/como desconectar router/desconectar-router.PNG" alt="Router desconectado" class="step-img"> 
+        <img src="../../assets/img-guias/como desconectar router/desconectar router2.PNG" alt="Router desconectado" class="step-img"> 
+
   </section>
 
   <section class="step">
     <h3>Paso 3: Tiempo de espera</h3>
-    <p>
-      Espere un mínimo de <strong>30 segundos</strong> antes de reconectar los equipos.
-    </p>
+    <ul>
+      <li>Espere mínimo <strong>30 segundos</strong></li>
+      <li>Este tiempo permite que los equipos se apaguen completamente</li>
+    </ul>
 
     <p class="note">
-      Este tiempo permite que los equipos se apaguen completamente.
-      No reconecte antes de que transcurra este tiempo.
+      No reconecte los equipos antes de este tiempo.
     </p>
   </section>
 
   <section class="step">
-    <h3>Paso 4: Conectar primero el PoE</h3>
-    <p>
-      Conecte nuevamente el PoE a la corriente y espere entre
-      <strong>1 y 2 minutos</strong>.
-    </p>
+    <h3>Paso 4: Encender el Mini UPS</h3>
+    <ul>
+      <li>Encienda nuevamente el Mini UPS</li>
+      <li>Espere <strong>30 segundos</strong></li>
+    </ul>
 
-    <!-- CAPTURA: PoE encendido con luces activas -->
-        <img src="../../assets/img-guias/imagenes para las guias/PoE conectado.PNG" alt="PoE encendido" class="step-img"> 
+    <img src="../../assets/img-guias/imagenes para las guias/ups_encendido.jpg" alt="router con mini ups" class="step-img">
+
   </section>
 
   <section class="step">
     <h3>Paso 5: Conectar el router</h3>
-    <p>
-      Una vez el PoE esté encendido, conecte el router WiFi a la corriente.
+    <ul>
+      <li>Conecte el router nuevamente a la corriente</li>
+      <li>Espere entre <strong>2 y 5 minutos</strong></li>
+    </ul>
+
+    <p class="note">
+      Verifique que las luces del equipo estén encendidas.
     </p>
 
-    <p>
-      Espere entre <strong>2 y 5 minutos</strong> mientras el servicio se restablece.
-    </p>
+    <img src="../../assets/img-guias/como desconectar router/conectar-router.PNG" alt="Router desconectado" class="step-img"> 
+    <img src="../../assets/img-guias/como desconectar router/router conectado.PNG" alt="Router desconectado" class="step-img"> 
 
-    <!-- CAPTURA: Router encendiendo -->
-        <img src="../../assets/img-guias/como desconectar router/router conectado.PNG" alt="Router encendido" class="step-img">
   </section>
 
   <section class="step">
     <h3>Verificación del servicio</h3>
-    <p>
-      Durante el encendido:
-    </p>
-
     <ul>
-      <li>El WiFi puede tardar unos minutos en aparecer</li>
+      <li>El WiFi puede tardar algunos minutos en aparecer</li>
       <li>Las luces pueden parpadear durante el inicio</li>
       <li>Espere hasta 5 minutos antes de probar la conexión</li>
     </ul>
@@ -160,7 +160,7 @@
       <li>❌ Apagar y encender los equipos repetidamente</li>
       <li>❌ Conectar ambos equipos al mismo tiempo</li>
       <li>❌ Presionar el botón RESET</li>
-      <li>❌ Desconectar el cable que va hacia la antena</li>
+      <li>❌ Desconectar el cable de red hacia la antena</li>
     </ul>
   </section>
 
@@ -169,19 +169,21 @@
     <ul>
       <li>Luego de 10 minutos no hay conexión</li>
       <li>Las luces no encienden correctamente</li>
-      <li>El problema persiste luego del reinicio</li>
+      <li>El problema persiste después del reinicio</li>
     </ul>
 
     <p class="note">
-      Indique al técnico que ya realizó el reinicio del servicio según la guía.
+      Indique al técnico que ya realizó el reinicio del servicio según esta guía.
     </p>
   </section>
 
   <footer class="footer-note">
-    La apariencia de los equipos y las luces puede variar según el modelo instalado.
+    La apariencia de los equipos y las luces puede variar según el modelo instalado. <br>
+    Soporte técnico MINET C.A
   </footer>
 
 </main>
+
 
 
 </body>
