@@ -20,22 +20,22 @@
     <aside class="sidebar">
       <nav class="sidebar-icons">
 
-        <div class="nav-item active">
+        <div class="nav-item active" data-page ="home">
           <i class="fa-solid fa-house"></i>
           <span>Inicio</span>
         </div>
 
-        <div class="nav-item">
+        <div class="nav-item" data-page="Antena">
           <i class="fa-solid fa-satellite-dish"></i>
           <span>Antena</span>
         </div>
 
-        <div class="nav-item">
+        <div class="nav-item" data-page="Fibra">
           <i class="fa-solid fa-tower-broadcast"></i>
           <span>Fibra</span>
         </div>
 
-        <div class="nav-item">
+        <div class="nav-item" data-page="Router">
           <i class="fa-solid fa-wifi"></i>
           <span>Router</span>
         </div>
@@ -45,7 +45,7 @@
 
     <!-- CONTENIDO -->
     <main class="content-wrapper">
-      <div class="content">
+      <div class="content" id="content">
         <h1>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
           voluptatem, odio reiciendis fugiat, aspernatur rem tempora nisi.
@@ -56,12 +56,67 @@
   </div>
 
 <script>
+
+  /*
+  #########################
+  # Botones de navegación #
+  #########################
+  */
   const items = document.querySelectorAll(".nav-item");
 
   items.forEach(item => {
     item.addEventListener("click", () => {
       items.forEach(i => i.classList.remove("active"));
       item.classList.add("active");
+    });
+  });
+
+  /* #########################
+     # Carga de contenido   #
+     #########################
+  */
+  const content = document.getElementById("content");
+
+  const pages = {
+    home: `
+      <h1>Bienvenido a MINET</h1>
+      <p>Selecciona una opción del menú para continuar.</p>
+    `,
+
+    Antena: `
+      <h1>Soporte Antena</h1>
+      <p>Aquí encontrarás las guías relacionadas con antenas.</p>
+    `,
+
+    Fibra: `
+      <h1>Soporte Fibra</h1>
+      <p>Guías para clientes de fibra óptica.</p>
+    `,
+
+    Router: `
+      <h1>Configuración de Router</h1>
+      <p>Guías para cambiar WiFi, reiniciar, etc.</p>
+    `
+  };
+
+/* #########################
+   # Manejo de eventos    #
+   #########################
+*/
+
+  const navItems = document.querySelectorAll(".nav-item");
+
+  navItems.forEach(item => {
+    item.addEventListener("click", () => {
+
+      // icono activo
+      navItems.forEach(i => i.classList.remove("active"));
+      item.classList.add("active");
+
+      // cargar contenido
+      const page = item.dataset.page;
+      content.innerHTML = pages[page];
+
     });
   });
 </script>
