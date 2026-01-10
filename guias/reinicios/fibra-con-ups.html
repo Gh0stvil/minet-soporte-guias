@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MINET | Soporte Mercusys</title>
+  <title>MINET | Soporte Fibra con UPS</title>
 
   <!-- Iconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -35,8 +35,8 @@
   <main class="content-wrapper">
     <div class="content" id="content">
 
-        <h1>Reinicio del servicio de Internet</h1>
-  <h2>Antena + Router (Con Mini UPS)</h2>
+       <h1>Reinicio del servicio de Internet</h1>
+  <h2>Fibra óptica (ONU + Router) – Con Mini UPS</h2>
 
   <p class="subtitle">
     Guía técnica de autosoporte – MINET C.A
@@ -44,8 +44,8 @@
 
   <section class="intro">
     <p>
-      Esta guía tiene como objetivo indicar al cliente cómo reiniciar correctamente
-      el servicio de internet en instalaciones con <strong>antena y Mini UPS</strong>,
+      Esta guía indica cómo reiniciar correctamente el servicio de internet
+      en instalaciones de <strong>fibra óptica con Mini UPS</strong>,
       realizando únicamente la desconexión física de la corriente,
       sin afectar configuraciones, contraseñas ni el plan de servicio.
     </p>
@@ -54,39 +54,36 @@
       ⚠ Este procedimiento <strong>NO borra configuraciones</strong> y
       <strong>NO debe incluir presionar botones RESET</strong>.
     </p>
-
   </section>
 
   <section class="requirements">
     <h3>¿Cuándo aplicar este procedimiento?</h3>
     <ul>
-      <li>No hay acceso a internet</li>
-      <li>El WiFi aparece conectado pero no navega</li>
-      <li>El servicio se volvió inestable</li>
-      <li>Hubo un corte eléctrico y el Mini UPS se descargó</li>
+      <li>No hay conexión a internet</li>
+      <li>El WiFi aparece conectado, pero no navega</li>
+      <li>El servicio está inestable luego de un corte eléctrico</li>
+      <li>El Mini UPS estuvo descargado o apagado</li>
     </ul>
   </section>
 
   <section class="step">
     <h3>Identificación de los equipos</h3>
     <p>
-      En una instalación con antena y Mini UPS, identifique los siguientes equipos:
+      En una instalación de fibra óptica con Mini UPS, identifique los siguientes equipos:
     </p>
 
     <ul>
+      <li>ONU (equipo de fibra óptica)</li>
       <li>Router WiFi</li>
-      <li>Mini UPS</li>
-      <li>PoE (Power over Ethernet)</li>
-      <li>Antena exterior (ubicada fuera de la vivienda)</li>
+      <li>Mini UPS (equipo con batería)</li>
     </ul>
 
     <p class="note">
-      ⚠ La antena exterior <strong>NO debe manipularse</strong>.
+      El Mini UPS puede alimentar uno o ambos equipos, según la instalación.
     </p>
 
-    <img src="../../../assets/img-guias/router-UPS.png" alt="router con mini ups" class="step-img">
-    <img src="../../../assets/img-guias/poe-antena.png" alt="poe-antena" class="step-img">
-    
+    <img src="../../assets/img-guias/ONU GPON.jpg" alt="ONU GPON" class="step-img"> 
+    <img src="../../assets/img-guias/router-UPS.png" alt="Router con UPS" class="step-img"> 
   </section>
 
   <section class="step">
@@ -100,58 +97,75 @@
       ⚠ No desconecte aún los cables de los equipos.
     </p>
 
-    <img src="../../../assets/img-guias/apagar_miniups.PNG" alt="Apagar mini ups" class="step-img">
-
+    <img src="../../assets/img-guias/apagar_miniups.PNG" alt="apagar_miniups" class="step-img"> 
   </section>
 
   <section class="step">
-    <h3>Paso 2: Desconectar el router de la corriente</h3>
+    <h3>Paso 2: Desconectar el router</h3>
     <ul>
       <li>Una vez apagado el Mini UPS, desconecte el cable de corriente del router</li>
     </ul>
 
-        <img src="../../../assets/img-guias/desconectar-router.PNG" alt="Router desconectado" class="step-img"> 
-        <img src="../../../assets/img-guias/desconectar router2.PNG" alt="Router desconectado" class="step-img"> 
-
+        <img src="../../assets/img-guias/desconectar-router.PNG" alt="Router desconectado" class="step-img"> 
+        <img src="../../assets/img-guias/desconectar router2.PNG" alt="Router desconectado" class="step-img"> 
   </section>
 
   <section class="step">
-    <h3>Paso 3: Tiempo de espera</h3>
+    <h3>Paso 3: Desconectar la ONU</h3>
+    <ul>
+      <li>Desconecte el cable de alimentación de la ONU</li>
+    </ul>
+
+    <p class="note">
+      ⚠ No desconecte el cable de fibra óptica.
+    </p>
+
+        <img src="../../assets/img-guias/desconectar ONU.PNG" alt="Router onu" class="step-img"> 
+        <img src="../../assets/img-guias/desconectar ONU 2.PNG" alt="Router ONU" class="step-img"> 
+  </section>
+
+  <section class="step">
+    <h3>Paso 4: Tiempo de espera</h3>
     <ul>
       <li>Espere mínimo <strong>30 segundos</strong></li>
       <li>Este tiempo permite que los equipos se apaguen completamente</li>
     </ul>
 
     <p class="note">
-      No reconecte los equipos antes de este tiempo.
+      No omita este tiempo de espera.
     </p>
   </section>
 
   <section class="step">
-    <h3>Paso 4: Encender el Mini UPS</h3>
+    <h3>Paso 5: Encender el Mini UPS</h3>
     <ul>
       <li>Encienda nuevamente el Mini UPS</li>
       <li>Espere <strong>30 segundos</strong></li>
     </ul>
 
-    <img src="../../../assets/img-guias/ups_encendido.jpg" alt="UPS encendido" class="step-img">
+        <img src="../../assets/img-guias/ups_encendido.jpg" alt="ups_encendido" class="step-img"> 
 
-  </section>
+    </section>
 
   <section class="step">
-    <h3>Paso 5: Conectar el router</h3>
+    <h3>Paso 6: Conectar la ONU</h3>
     <ul>
-      <li>Conecte el router nuevamente a la corriente</li>
+      <li>Conecte la ONU a la corriente</li>
+      <li>Espere entre <strong>1 y 2 minutos</strong></li>
+    </ul>
+
+        <img src="../../assets/img-guias/luces de la onu.PNG" alt="onu_encendida" class="step-img"> 
+
+    </section>
+
+  <section class="step">
+    <h3>Paso 7: Conectar el router</h3>
+    <ul>
+      <li>Conecte el router a la corriente</li>
       <li>Espere entre <strong>2 y 5 minutos</strong></li>
     </ul>
 
-    <p class="note">
-      Verifique que las luces del equipo estén encendidas.
-    </p>
-
-    <img src="../../../assets/img-guias/conectar-router.PNG" alt="Router conectado" class="step-img"> 
-    <img src="../../../assets/img-guias/router conectado.PNG" alt="Router conectado" class="step-img"> 
-
+    <img src="../../assets/img-guias/router conectado.PNG" alt="Router encendido" class="step-img">
   </section>
 
   <section class="step">
@@ -170,10 +184,10 @@
   <section class="alert">
     <h3>Errores comunes que debe evitar</h3>
     <ul>
-      <li>❌ Apagar y encender los equipos repetidamente</li>
-      <li>❌ Conectar ambos equipos al mismo tiempo</li>
+      <li>❌ No apagar el Mini UPS antes del reinicio</li>
+      <li>❌ Apagar y encender repetidamente los equipos</li>
       <li>❌ Presionar el botón RESET</li>
-      <li>❌ Desconectar el cable de red hacia la antena</li>
+      <li>❌ Desconectar el cable de fibra óptica</li>
     </ul>
   </section>
 
@@ -181,7 +195,8 @@
     <h3>¿Cuándo contactar a soporte MINET?</h3>
     <ul>
       <li>Luego de 10 minutos no hay conexión</li>
-      <li>Las luces no encienden correctamente</li>
+      <li>El Mini UPS no enciende o no mantiene carga</li>
+      <li>Las luces de la ONU no se estabilizan</li>
       <li>El problema persiste después del reinicio</li>
     </ul>
 
@@ -582,7 +597,7 @@ body {
 ===================================================== */
 
 function loadHome() {
-  window.location.href = "../../../index.html";
+  window.location.href = "../../index.html";
 }
 
 /* =====================================================
