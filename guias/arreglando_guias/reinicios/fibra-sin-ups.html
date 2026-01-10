@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MINET | Soporte</title>
+  <title>MINET | Soporte Mercusys</title>
 
   <!-- Iconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -17,16 +17,16 @@
   <aside class="sidebar">
     <nav class="sidebar-icons">
 
-      <div class="nav-item active" data-section="home">
+      <div class="nav-item " data-section="home">
         <i class="fa-solid fa-house"></i>
-        <span>Inicio</span>
+        <span><strong>Inicio</strong></span>
       </div>
 
-      <div class="nav-item active" data-section="sopoete">
+      <div class="nav-item" data-section="soporte">
         <a href="https://wa.me/584125400172?text=Hola%20soporte%20MINET,%20necesito%20ayuda">
         <i class="fa-solid fa-headset" src=""></i>
         </a>
-        <span>Soporte</span>
+        <span><strong>Soporte</strong></span>
       </div>
     </nav>
   </aside>
@@ -35,152 +35,167 @@
   <main class="content-wrapper">
     <div class="content" id="content">
 
-        <h1>Cambiar nombre y clave del WiFi</h1>
-        <h2>Router Mercusys</h2>
+       <h1>Reinicio del servicio de internet</h1>
+  <h2>Fibra óptica (ONU + Router) – Sin Mini UPS</h2>
 
-        <p class="subtitle">
-            Guía técnica de autosoporte – MINET C.A
-        </p>
+  <p class="subtitle">
+    Guía técnica de autosoporte – MINET C.A
+  </p>
 
-        <section class="intro">
-            <p>
-                Esta guía explica cómo cambiar el nombre y la contraseña de la red WiFi en un
-             router <strong>Mercusys</strong>, lo cual permite mejorar la seguridad de la conexión
-             y controlar qué dispositivos pueden conectarse a la red.
-            </p>
-        </section>
+  <section class="intro">
+    <p>
+      Esta guía explica cómo reiniciar correctamente el servicio de internet
+      cuando presenta fallas temporales, mediante la desconexión física de los
+      equipos <strong>ONU</strong> y <strong>Router WiFi</strong>, sin realizar
+      configuraciones ni restablecimientos.
+    </p>
 
-        <section class="requirements">
-            <h3>Qué necesitas</h3>
-         <ul>
-            <li>Teléfono móvil</li>
-            <li>Estar conectado al WiFi del router Mercusys</li>
-             <li>Router encendido</li>
-             <li>Navegador web (Chrome, Firefox u otro)</li>
-            </ul>
-         </section>
+    <p class="note">
+      Este procedimiento <strong>NO borra configuraciones</strong>,
+      <strong>NO cambia contraseñas</strong> y
+      <strong>NO afecta su plan de servicio</strong>.
+    </p>
+  </section>
 
-        <section class="step">
-            <h3>Paso 1</h3>
-         <p>
-           Conéctate desde tu teléfono al WiFi del router Mercusys.
-         </p>
+  <section class="requirements">
+    <h3>¿Cuándo aplicar este procedimiento?</h3>
+    <ul>
+      <li>No hay acceso a internet</li>
+      <li>El WiFi aparece conectado pero no navega</li>
+      <li>El servicio falló luego de un corte eléctrico</li>
+      <li>La conexión es intermitente</li>
+    </ul>
+  </section>
 
-         <!-- CAPTURA 1: Teléfono conectado al WiFi Mercusys -->
-         <img src="../../../assets/img-guias/ya_conectado.jpg" alt="Conectado al WiFi Mercusys" class="step-img">
-        </section>
+  <section class="requirements">
+    <h3>Identificación de los equipos</h3>
+    <p>
+      En una instalación de fibra óptica <strong>sin Mini UPS</strong>,
+      debe identificar dos equipos principales:
+    </p>
+    <ul>
+      <li><strong>ONU</strong> (equipo de fibra óptica)</li>
+      <li><strong>Router WiFi</strong></li>
+    </ul>
+    <p class="note">
+      Ambos equipos están conectados directamente al tomacorriente,
+      sin batería intermedia.
+    </p>
 
-        <section class="step">
-            <h3>Paso 2</h3>
-            <p>
-            Abre el navegador web en tu teléfono (Chrome, Firefox u otro).
-         </p>
+    <img src="../../../assets/img-guias/equipos 2.png" alt="Identificación de equipos" class="step-img">
 
-            <!-- CAPTURA 2: Navegador abierto en el teléfono -->
-         <img src="../../../assets/img-guias/buscador_google.jpg" alt="Navegador en el teléfono" class="step-img">
-        </section>
+  </section>
 
-        <section class="step">
-            <h3>Paso 3</h3>
-          <p>
-             En la barra de direcciones del navegador, escribe o presiona el siguiente enlace:
-         </p>
+  <section class="step">
+    <h3>Paso 1</h3>
+    <p>
+      Desconecte el <strong>router WiFi</strong> de la corriente eléctrica.
+    </p>
+    <ul>
+      <li>Ubique el cable de alimentación del router</li>
+      <li>Desconéctelo completamente del tomacorriente</li>
+    </ul>
 
-         <p class="ip">
-         👉 <a href="http://192.168.1.1" target="_blank">http://192.168.1.1</a>
-         </p>
+        <img src="../../../assets/img-guias/desconectar-router.PNG" alt="Router desconectado" class="step-img"> 
+        <img src="../../../assets/img-guias/desconectar router2.PNG" alt="Router desconectado" class="step-img"> 
+  </section>
 
-        <p class="note">
-            Nota: debes estar conectado al WiFi del router para que el enlace funcione correctamente.
-        </p>
+  <section class="step">
+    <h3>Paso 2</h3>
+    <p>
+      Desconecte la <strong>ONU</strong> de la corriente eléctrica.
+    </p>
+    <ul>
+      <li>Ubique el cable de alimentación de la ONU</li>
+      <li>Desconéctelo del tomacorriente</li>
+    </ul>
+    <p class="note">
+      No desconecte el cable de fibra óptica.
+      Este cable suele ser delgado y frágil.
+    </p>
 
-        <!-- CAPTURA 3: IP escrita en el navegador -->
-         <img src="../../../assets/img-guias/ip_navegador.jpg" alt="IP del router Mercusys" class="step-img">
-        </section>
+        <img src="../../../assets/img-guias/desconectar ONU.PNG" alt="Router desconectado" class="step-img"> 
+        <img src="../../../assets/img-guias/desconectar ONU 2.PNG" alt="Router desconectado" class="step-img"> 
 
-        <section class="step">
-            <h3>Paso 4</h3>
-            <p>
-             Ingresa al panel de configuración del router.  
-                Si el sistema solicita una contraseña, utiliza la proporcionada por el soporte técnico
-             de MINET.
-            </p>
 
-            <!-- CAPTURA 4: Pantalla de inicio de sesión Mercusys -->
-            <img src="../../../assets/img-guias/login_mercusis.jpg" alt="Inicio de sesión Mercusys" class="step-img">
-        </section>
+  </section>
 
-        <section class="step">
-            <h3>Paso 5</h3>
-         <p>
-           Busca y selecciona la opción <strong>Configuración inalámbrica</strong>
-          (<em>Wireless Settings / WiFi</em>).
-         </p>
+  <section class="step">
+    <h3>Paso 3</h3>
+    <p>
+      Espere un tiempo mínimo antes de volver a conectar los equipos.
+    </p>
+    <ul>
+      <li>Espere al menos <strong>30 segundos</strong></li>
+      <li>Este tiempo permite que los equipos se apaguen completamente</li>
+    </ul>
+    <p class="note">
+      No reconecte los equipos antes de que finalice este tiempo.
+    </p>
+  </section>
 
-         <!-- CAPTURA 5: Menú principal Mercusys -->
-         <img src="../../../assets/img-guias/3rayas_mercusys.jpg" alt="Menú Mercusys" class="step-img">
-         <img src="../../../assets/img-guias/wireless_option.jpg" alt="Menú Mercusys (Wireless)" class="step-img">
-        </section>
+  <section class="step">
+    <h3>Paso 4</h3>
+    <p>
+      Conecte nuevamente la <strong>ONU</strong> a la corriente.
+    </p>
+    <ul>
+      <li>Espere entre <strong>1 y 2 minutos</strong></li>
+    </ul>
+    <img src="../../../assets/img-guias/luces de la onu.PNG" alt="Router desconectado" class="step-img"> 
+  </section>
 
-        <section class="step">
-            <h3>Paso 6</h3>
-         <p>
-             Ubica el campo <strong>Nombre de la red</strong>
-              (<em>SSID / Network Name</em>) e ingresa el nuevo nombre para tu WiFi.
-         </p>
+  <section class="step">
+    <h3>Paso 5</h3>
+    <p>
+      Conecte el <strong>router WiFi</strong> a la corriente.
+    </p>
+    <ul>
+      <li>Espere entre <strong>2 y 5 minutos</strong></li>
+    </ul>
+    <img src="../../../assets/img-guias/router conectado.PNG" alt="Router encendido" class="step-img">
+  </section>
 
-         <!-- CAPTURA 6: Cambio de nombre WiFi -->
-         <img src="../../../assets/img-guias/SSID_mercusys.jpg" alt="Cambiar nombre WiFi" class="step-img">
-        </section>
+  <section class="step">
+    <h3>Verificación del servicio</h3>
+    <p>
+      Durante el proceso de encendido:
+    </p>
+    <ul>
+      <li>El WiFi puede tardar algunos minutos en aparecer</li>
+      <li>Las luces de los equipos pueden parpadear</li>
+      <li>Espere hasta <strong>5 minutos</strong> antes de probar la conexión</li>
+    </ul>
+    <p class="note">
+      No apague ni desconecte los equipos durante este proceso.
+    </p>
+  </section>
 
-        <section class="step">
-         <h3>Paso 7</h3>
-         <p>
-             Ubica el campo <strong>Contraseña WiFi</strong>
-             (<em>Password / Wireless Key</em>) e ingresa la nueva contraseña.
-         </p>
+  <section class="alert">
+    <h3>Errores comunes que debe evitar</h3>
+    <ul>
+      <li>No apagar y encender los equipos repetidamente</li>
+      <li>No conectar ambos equipos al mismo tiempo</li>
+      <li>No presionar el botón <strong>RESET</strong></li>
+      <li>No desconectar el cable de fibra óptica</li>
+    </ul>
+  </section>
 
-         <p class="note">
-             Se recomienda utilizar una contraseña segura.
-         </p>
+  <section class="alert">
+    <h3>¿Cuándo contactar a soporte MINET?</h3>
+    <ul>
+      <li>Luego de 10 minutos no hay conexión</li>
+      <li>Las luces de la ONU no encienden correctamente</li>
+      <li>El problema persiste después del reinicio</li>
+    </ul>
+    <p class="note">
+      Indique al técnico que ya realizó el reinicio del servicio según esta guía.
+    </p>
+  </section>
 
-         <!-- CAPTURA 7: Cambio de contraseña WiFi -->
-         <img src="../../../assets/img-guias/clave_mersusys.jpg" alt="Cambiar contraseña WiFi" class="step-img">
-        </section>
-
-        <section class="step">
-         <h3>Paso 8</h3>
-          <p>
-             Presiona el botón <strong>Guardar</strong>
-              (<em>Save / Apply</em>) para aplicar los cambios.
-         </p>
-
-         <!-- CAPTURA 8: Botón Guardar -->
-         <img src="../../../assets/img-guias/save.jpg" alt="Guardar cambios" class="step-img">
-        </section>
-
-        <section class="step">
-         <h3>Paso 9</h3>
-          <p>
-              Espera unos segundos mientras el router guarda la configuración.  
-             Luego, vuelve a conectarte al WiFi utilizando el nuevo nombre y contraseña.
-          </p>
-        </section>
-
-        <section class="alert">
-          <h3>Advertencias importantes</h3>
-         <ul>
-            <li>No presiones el botón <strong>RESET</strong> del router.</li>
-            <li>No modifiques otras opciones del menú si no estás seguro.</li>
-             <li>La conexión WiFi se desconectará momentáneamente al guardar los cambios.</li>
-          </ul>
-  
-        </section>
-
-        <footer class="footer-note">
-          Si presentas inconvenientes luego de seguir esta guía,
-          comunícate con el soporte técnico de <strong>MINET C.A</strong>.
-       </footer>
+  <footer class="footer-note">
+    La apariencia de los equipos y las luces puede variar según el modelo instalado.
+  </footer>
 
     </div>
   </main>
@@ -269,7 +284,7 @@ li {
    IMÁGENES
 ============================== */
 .step-img {
-  width: 100%;
+  width: 40%;
   margin-top: 12px;
   border-radius: 10px;
   border: 1px solid #ddd;
@@ -348,6 +363,14 @@ html, body {
 body {
   background-color: #051936;
   color: #050505;
+   background:
+    linear-gradient(
+      185deg,
+      #2ba3d3 0%,
+      #1e3a8a 35%,
+      #1d0442 70%,
+      #06000f 100%
+    );  
 }
 
 .layout {
@@ -370,6 +393,14 @@ body {
   bottom: 0;
   z-index: 1000;
   color: #e6e6e6;
+    background:
+    linear-gradient(
+      120deg,
+      #2ba3d3 0%,
+      #1e3a8a 35%,
+      #1d0442 70%,
+      #06000f 100%
+    );
 }
 
 .sidebar-icons {
@@ -409,6 +440,7 @@ body {
   justify-content: center;
   border-radius: 50%;
   transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+  color: #e6e6e6;
 }
 
 .nav-item:hover i {
@@ -456,6 +488,16 @@ body {
     height: auto;
   }
 
+  /* ==============================
+   IMÁGENES
+============================== */
+.step-img {
+  width: 100%;
+  margin-top: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
   /* SIDEBAR ABAJO */
   .sidebar {
     top: auto;
@@ -464,6 +506,15 @@ body {
     right: 0;
     width: 100%;
     height: 70px;
+      background:
+     linear-gradient(
+      75deg,
+      #2ba3d3 0%,
+      #1e3a8a 35%,
+      #1d0442 70%,
+      #06000f 100%
+    );
+    border-radius: 16px 16px 0 0;
   }
 
   .sidebar-icons {
@@ -494,12 +545,12 @@ body {
   .content-wrapper {
     margin: 0;
     width: 100vw;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 57px);
     padding: 0;
   }
 
   .content {
-    border-radius: 0px 0px 16px 16px;
+    border-radius: 0px 0px 0px 0px;
     height: 100%;
     padding: 16px;
   }
@@ -551,7 +602,7 @@ document.querySelectorAll(".nav-item").forEach(item => {
     const section = item.dataset.section;
 
     if (section === "home") loadHome();
-    if (section === "asistente") askInstalacion();
+    if (section === "soporte") askInstalacion();
   });
 });
 </script>

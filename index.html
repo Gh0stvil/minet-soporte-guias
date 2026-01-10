@@ -184,26 +184,24 @@ function resolveGuide() {
   // Reinicios (no dependen del router)
   if (userFlow.accion === "reinicio") {
     const path = `guias/reinicios/${userFlow.instalacion}-${userFlow.energia}.html`;
-    loadExternalGuide(path);
+    goToGuide(path);
     return;
   }
 
   // WiFi (sí depende del router)
   if (userFlow.accion === "wifi") {
     const path = `guias/wifi/${userFlow.router}.html`;
-    loadExternalGuide(path);
+    goToGuide(path);
   }
 }
 
 /* =====================================================
    CARGA DE HTML EXTERNO
 ===================================================== */
-function loadExternalGuide(path) {
-  fetch(path)
-    .then(res => res.text())
-    .then(html => render(html))
-    .catch(() => render("<p>Error cargando la guía.</p>"));
+function goToGuide(path) {
+  window.location.href = path;
 }
+
 
 /* =====================================================
    UTILIDADES
@@ -272,6 +270,14 @@ html, body {
 body {
   background-color: #051936;
   color: #e6e6e6;
+   background:
+    linear-gradient(
+      185deg,
+      #2ba3d3 0%,
+      #1e3a8a 35%,
+      #1d0442 70%,
+      #06000f 100%
+    );
 }
 
 .layout {
@@ -293,6 +299,14 @@ body {
   top: 0;
   bottom: 0;
   z-index: 1000;
+  background:
+    linear-gradient(
+      120deg,
+      #2ba3d3 0%,
+      #1e3a8a 35%,
+      #1d0442 70%,
+      #06000f 100%
+    );
 }
 
 .sidebar-icons {
