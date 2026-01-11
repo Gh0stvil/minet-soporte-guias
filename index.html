@@ -27,7 +27,7 @@
         <span>Asistente</span>
       </div>
 
-      <div class="nav-item" data-section="router">
+      <div class="nav-item" data-section="descargas">
         <i class="fa-solid fa-file-arrow-down"></i>
         <span>Descargas</span>
       </div>
@@ -43,6 +43,9 @@
 </div>
 
 <script>
+
+  const DOWNLOAD_KEY = "MINET2026";
+
 
   /*
   #########################
@@ -101,9 +104,19 @@ function askInstalacion() {
     <h2>¿Qué tipo de instalación tienes?</h2>
 
     <div class="options">
-      <button onclick="selectInstalacion('antena')">Antena</button>
-      <button onclick="selectInstalacion('fibra')">Fibra óptica</button>
+
+      <div class="option-card" onclick="selectInstalacion('antena')">
+        <img src="assets/img-guias/AntenaA.png" alt="Instalación por Antena">
+        <span>Antena</span>
+      </div>
+
+      <div class="option-card" onclick="selectInstalacion('fibra')">
+        <img src="assets/img-guias/FIBRA.png" alt="Instalación por Fibra Óptica">
+        <span>Fibra óptica</span>
+      </div>
+
     </div>
+
   `);
 }
 
@@ -120,8 +133,18 @@ function askEnergy() {
     <h2>¿Tu instalación tiene Mini UPS?</h2>
 
     <div class="options">
-      <button onclick="selectEnergy('con-ups')">Con Mini UPS</button>
-      <button onclick="selectEnergy('sin-ups')">Sin Mini UPS</button>
+
+      <div class="option-card" onclick="selectEnergy('con-ups')">
+        <img src="assets/img-guias/ConUps.png" alt="Con Mini UPS">
+        <span>Con UPS</span>
+
+      </div>
+
+      <div class="option-card" onclick="selectEnergy('sin-ups')">
+        <img src="assets/img-guias/SinUps.png" alt="enchufe sin UPS">
+        <span>Sin UPS</span>
+      </div>
+
     </div>
   `);
 }
@@ -143,8 +166,16 @@ function askAction() {
     </p>
 
     <div class="options">
-      <button onclick="selectAction('reinicio')">Reinicio de equipos</button>
-      <button onclick="selectAction('wifi')">Cambiar WiFi</button>
+      <div class="option-card" onclick="selectAction('reinicio')">
+        <img src="assets/img-guias/reinicio.png" alt="reinicio">
+        <span>Reinicio</span>
+
+      </div>
+
+      <div class="option-card" onclick="selectAction('wifi')">
+        <img src="assets/img-guias/wifi.png" alt="wifi">
+        <span>Cambiar Nombre/clave</span>
+      </div>
     </div>
   `);
 }
@@ -167,9 +198,21 @@ function askRouter() {
     <h2>¿Qué marca de router tienes?</h2>
 
     <div class="options">
-      <button onclick="selectRouter('mercusys')">Mercusys</button>
-      <button onclick="selectRouter('tplink')">TP-Link</button>
-      <button onclick="selectRouter('tenda')">Tenda</button>
+      <div class="option-card" onclick="selectRouter('mercusys')">
+        <img src="assets/img-guias/MERCUSYS.png" alt="mercusys">
+        <span>Mercusys</span>
+
+      </div>
+
+      <div class="option-card" onclick="selectRouter('tenda')">
+        <img src="assets/img-guias/tendalogo.png" alt="tenda">
+        <span>Tenda</span>
+      </div>
+      
+      <div class="option-card" onclick="selectRouter('tplink')">
+        <img src="assets/img-guias/TP-LINK.png" alt="tplink">
+        <span>Tp-link</span>
+      </div>
     </div>
   `);
 }
@@ -205,7 +248,6 @@ function goToGuide(path) {
   window.location.href = path;
 }
 
-
 /* =====================================================
    UTILIDADES
 ===================================================== */
@@ -215,6 +257,101 @@ function resetFlow() {
   userFlow.accion = null;
   userFlow.router = null;
 }
+
+/* =====================================================
+   Seccion de descargas
+===================================================== */
+function descargasD() {
+  render(`
+<div class="download-grid">
+
+  <a class="download-card" href="assets/guias/mercusys.pdf" download>
+    <div class="card-image">
+      <img src="assets/img/routers/mercusys.png" alt="Mercusys">
+    </div>
+    <div class="card-title">Mercusys</div>
+  </a>
+
+  <a class="download-card" href="assets/guias/tplink.pdf" download>
+    <div class="card-image">
+      <img src="assets/img/routers/tplink.png" alt="TP-Link">
+    </div>
+    <div class="card-title">TP-Link</div>
+  </a>
+
+  <a class="download-card" href="assets/guias/tenda.pdf" download>
+    <div class="card-image">
+      <img src="assets/img/routers/tenda.png" alt="Tenda">
+    </div>
+    <div class="card-title">Tenda</div>
+  </a>
+
+  <a class="download-card" href="assets/guias/huawei.pdf" download>
+    <div class="card-image">
+      <img src="assets/img/routers/huawei.png" alt="Huawei">
+    </div>
+    <div class="card-title">Huawei</div>
+  </a>
+
+  <a class="download-card" href="assets/guias/zte.pdf" download>
+    <div class="card-image">
+      <img src="assets/img/routers/zte.png" alt="ZTE">
+    </div>
+    <div class="card-title">ZTE</div>
+  </a>
+
+  <a class="download-card" href="assets/guias/fibra.pdf" download>
+    <div class="card-image">
+      <img src="assets/img/routers/fibra.png" alt="Fibra">
+    </div>
+    <div class="card-title">Fibra Óptica</div>
+  </a>
+
+  <a class="download-card" href="assets/guias/antena.pdf" download>
+    <div class="card-image">
+      <img src="assets/img/routers/antena.png" alt="Antena">
+    </div>
+    <div class="card-title">Antena</div>
+  </a>
+
+</div>
+
+  `);
+}
+
+function solicitarClaveDescargas() {
+  render(`
+    <div class="access-modal">
+      <div class="modal-box">
+        <h2>Acceso a descargas</h2>
+        <p>Ingresa la clave proporcionada por soporte técnico.</p>
+
+        <input 
+          type="password" 
+          id="accessKey" 
+          placeholder="Clave de acceso"
+        >
+        <div class = "Botones_modal">
+          <button onclick="verificarClave()">Ingresar</button>
+          <button onclick="loadHome()">Regresar</button>
+        </div>
+        <p id="accessError" class="error"></p>
+      </div>
+    </div>
+  `);
+}
+
+function verificarClave() {
+  const input = document.getElementById("accessKey").value.trim();
+  const error = document.getElementById("accessError");
+
+  if (input === DOWNLOAD_KEY) {
+    descargasD(); // 👉 aquí cargamos las tarjetas reales
+  } else {
+    error.textContent = "Clave incorrecta. Intenta nuevamente.";
+  }
+}
+
 
 /* =====================================================
    SIDEBAR
@@ -232,6 +369,7 @@ document.querySelectorAll(".nav-item").forEach(item => {
 
     if (section === "home") loadHome();
     if (section === "asistente") askInstalacion();
+    if (section === "descargas") solicitarClaveDescargas();
   });
 });
 
@@ -392,6 +530,195 @@ body {
     );
 }
 
+/* ============================
+   OPCIONES DEL ASISTENTE
+============================ */
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+/* TARJETA */
+.option-card {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 20px 12px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+/* IMAGEN */
+.option-card img {
+  width: 90px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* TEXTO */
+.option-card span {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* HOVER */
+.option-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* ACTIVO (TOUCH) */
+.option-card:active {
+  transform: scale(0.98);
+}
+
+/* ===============================
+   SECCIÓN DESCARGAS
+================================ */
+
+.download-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+/* TARJETA */
+.download-card {
+  text-decoration: none;
+  color: inherit;
+
+  background: transparent;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* HOVER */
+.download-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+}
+
+/* CONTENEDOR IMAGEN */
+.card-image {
+  background: #ffffff;
+  padding: 18px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 16px 16px 0 0;
+}
+
+/* IMAGEN */
+.card-image img {
+  width: 90px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* TEXTO INFERIOR */
+.card-title {
+  background: rgba(10, 20, 40, 0.85);
+  color: #e6e6e6;
+
+  text-align: center;
+  padding: 12px;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* TOUCH */
+.download-card:active {
+  transform: scale(0.97);
+}
+
+/* ===============================
+   MODAL DE ACCESO
+================================ */
+
+.access-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal-box {
+  background: #0b1f3a;
+  color: #e6e6e6;
+
+  width: 90%;
+  max-width: 360px;
+  padding: 24px;
+
+  border-radius: 16px;
+  text-align: center;
+}
+
+.modal-box h2 {
+  margin-bottom: 8px;
+}
+
+.modal-box p {
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.modal-box input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin-bottom: 12px;
+}
+
+.modal-box button {
+  width: 100%;
+  padding: 10px;
+  background: #2ba3d3;
+  color: #051936;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.modal-box button:hover {
+  opacity: 0.9;
+}
+
+.error {
+  margin-top: 10px;
+  color: #ff6b6b;
+  font-size: 13px;
+}
+
+.Botones_modal {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
 /* =====================
    MOBILE
 ===================== */
@@ -401,6 +728,10 @@ body {
   .layout {
     display: block;
     height: auto;
+  }
+
+  .download-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   /* SIDEBAR ABAJO */
